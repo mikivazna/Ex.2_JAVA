@@ -13,6 +13,7 @@ public class FASE4 {
 		  nom.add('U');
 		  nom.add('E');
 		  nom.add('L');
+		  nom.add(' ');
 		  
 		ArrayList<Character> cognom = new ArrayList<Character>(); 
 			 

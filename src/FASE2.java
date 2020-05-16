@@ -1,5 +1,7 @@
 
-
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.*;
 
 
@@ -15,12 +17,16 @@ public class FASE2 {
 		  nom.add('E');
 		  nom.add('L');
 		  
-		  
+		for (char instrumento:nom){
+			
+		if	(instrumento=='1'||instrumento=='2'||instrumento=='3'||instrumento=='4'||instrumento=='5'||instrumento=='6'||instrumento=='7'||instrumento=='8'||instrumento=='9'||instrumento=='0'){
+			
+			System.out.println("Els noms de persones no contenen no contenen números");
+			
+		}
 		
-		for (char i=0;i<nom.size();i++){
 		
-		
-		if (i=='A'||i=='E'||i=='I'||i=='O'||i=='U'||i=='a'||i=='e'||i=='i'||i=='o'||i=='u'){
+		else if (instrumento=='A'||instrumento=='E'||instrumento=='I'||instrumento=='O'||instrumento=='U'||instrumento=='a'||instrumento=='e'||instrumento=='i'||instrumento=='o'||instrumento=='u'){
 			
 			System.out.println("VOCAL");
 			
@@ -33,10 +39,7 @@ public class FASE2 {
 			
 		}
 		
-		if (i=='1'||i=='2'||i=='3'||i=='4'||i=='5'||i=='6'||i=='7'||i=='8'||i=='9'||i=='0'){
-			
-			System.out.println("Els noms de persones no contenen no contenen números");
-		}
+		
 	}
 	
 	

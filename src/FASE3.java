@@ -1,51 +1,44 @@
 import java.util.*;
 
-public class FASE3 {
+public class FASE3<E>
+{
+       public static void main(String[] args) 
+       {
+    	   
+  		 ArrayList<Character> nom = new ArrayList<Character>(); 
+		 
+		  nom.add('M'); 
+		  nom.add('I');
+		  nom.add('G');
+		  nom.add('U');
+		  nom.add('E');
+		  nom.add('L');
+		  
+           Map<Character, Integer> unique = new LinkedHashMap<Character, Integer>();
+           for (Character instrumento:nom) {
+               if(unique.get(instrumento) == null)
+                   unique.put(instrumento, 1);
+               else
+                   unique.put(instrumento, unique.get(instrumento) + 1);
+           }
+           String uniqueCharacter = join(unique.keySet(), ", ");
+           List<Integer> value = new ArrayList<Integer>(unique.values());
 
-	public static void main(String[] args) {
-		
-		HashMap<String, Letras> nombre = new HashMap<String, Letras>();
-		
-		nombre.put("1", new Letras("M"));
-		
-		nombre.put("2", new Letras("I"));
-		
-		nombre.put("3", new Letras("G"));
-		
-		nombre.put("4", new Letras("U"));
-		
-		nombre.put("5", new Letras("E"));
-		
-		nombre.put("6", new Letras("L"));
-		
-		System.out.println(nombre);
-		
-		
-	}
-	
+           System.out.println("Nombre = " + uniqueCharacter);
+           System.out.println("Repeticiones de las letras = " + value);
+
+       }
+
+       public static String join(Set<Character> set, String delimiter) {
+           StringBuffer buffer = new StringBuffer();
+           Iterator<Character> iter = set.iterator();
+           while (iter.hasNext()) {
+               buffer.append(iter.next());
+               if (iter.hasNext()) {
+                   buffer.append(delimiter);
+               }
+           }
+           return buffer.toString();
+       }
 }
-	
-
-
-class Letras{
-	
-	public Letras(String n){
-		
-		Letras=n;
-		
-		repeticion=1;
-		
-	}
-	
-public String toString(){
-		
-		return "[La letra " + Letras + " se repite " + repeticion+ " vez]";
-	
-}
-		
-		private String Letras;
-
-		private int repeticion;
-	
-		}
 
